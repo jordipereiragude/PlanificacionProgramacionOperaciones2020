@@ -1,2 +1,12 @@
 # PlanificacionProgramacionOperaciones2020
 Material asociado al curso de programación y planificación de operaciones del 2020
+
+## Contenido carpeta scheduling
+
+Esta carpeta contiene material para jobshop
+
+- instances. Tres instancias (procedentes de Taillard)
+
+- milp. Modelo MILP en Julia basado en condiciones disyuntivas. También está el mismo modelo en Jupyter
+
+- sbh. Código de shifting bottleneck por Applegate y Cook 
