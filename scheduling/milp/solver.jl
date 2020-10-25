@@ -1,7 +1,10 @@
-using JuMP, CPLEX
+#using JuMP, CPLEX
+using JuMP, GLPK
 
 function jobshop(n, m, p, r)
-  model = Model(CPLEX.Optimizer)
+  #model = Model(CPLEX.Optimizer)
+  model = Model(GLPK.Optimizer)
+  set_optimizer_attribute(model, "msg_lev", GLPK.GLP_MSG_ALL)
   @variable(model,s[1:n,1:m]>=0)
   @variable(model,C>=0)
   @objective(model, Min, C)
