@@ -1,5 +1,5 @@
 #vamos a imprimir el archivo (funciona en linux, en windows debería ejecutarse otra orden)
-run(`cat SAWYER30.IN2`)
+run(`cat ../instances/SAWYER30.IN2`)
 
 using JuMP, CPLEX #CPLEX es el solver de IP de IBM.
 #using JuMP, GLPK
@@ -30,7 +30,6 @@ function readFile(filename)
     return nt,duracion,precedencias
 end
 
-nt,duracion,precedencias=readFile("SAWYER30.IN2")
 
 function salbp1(nt,c,duracion,precedencias)
     model = Model(CPLEX.Optimizer)
@@ -67,8 +66,10 @@ function salbp1(nt,c,duracion,precedencias)
     end
 end
 
-salbp1(nt,27,duracion,precedencias)
-
+nt,duracion,precedencias=readFile("../instances/SAWYER30.IN2")
+for i in 25:40
+  salbp1(nt,i,duracion,precedencias)
+end
 
 
 
