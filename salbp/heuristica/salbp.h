@@ -8,6 +8,7 @@ typedef struct instance
   int* d; //duración de las tareas -> equivalente a un vector (del que no sé el tamaño a priori)
   //precedencias
   int** p; // p[i][j]=1 si la tarea i es predecesora de la j -> equivalente a una matriz (de la que no sé el tamaño a priori)
+  int* prioridad; //cuanto más alto sea este valor, más prioritaria es la tarea prioridad[i] indica la prioridad de la tarea i
 }instance;
 
 typedef struct solucion
