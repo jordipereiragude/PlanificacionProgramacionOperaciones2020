@@ -29,7 +29,6 @@ function ulsp(n,K,h,d,s0,useCPLEX) #número de periodos, coste por pedido, coste
     @constraint(model,s0==s[0]) #inventario inicial
     @constraint(model,[t in 1:n],s[t]==s[t-1]+x[t]-d[t]) #inventario
     @constraint(model,[t in 1:n],x[t]<=M*y[t]) #activación
-
     #println(model)
     optimize!(model)
     println("Objective: ",objective_value(model))
