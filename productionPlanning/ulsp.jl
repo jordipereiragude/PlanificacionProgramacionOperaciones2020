@@ -56,7 +56,7 @@ function ulspAlt(n,K,h,d,s0,useCPLEX) #número de periodos, coste por pedido, co
             s0=0
             break
         else
-            s0-d[i]
+            s0-=d[i]
             d[i]=0
         end
     end
